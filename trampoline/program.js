@@ -6,7 +6,7 @@ const repeat = (operation, num) =>
   }
 
 
-const trampoline = (fn) => {
+const trampoline = fn => {
   while(fn && typeof fn === 'function') {
     fn = fn()
   }

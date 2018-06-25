@@ -1,1 +1,1 @@
-module.exports = (numbers) => numbers.map(n => n * 2)
+module.exports = numbers => numbers.map(n => n * 2)
