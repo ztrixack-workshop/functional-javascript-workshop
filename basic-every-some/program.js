@@ -1,9 +1,4 @@
-module.exports = function checkUsersValid(goodUsers) {
-  return function allUsersValid(submittedUsers) {
-    return submittedUsers.every(submittedUser => {
-      return goodUsers.some(goodUser => {
-        return submittedUser.id === goodUser.id
-      })
-    })
-  }
-}
+module.exports = (goodUsers) => 
+  (submittedUsers) => 
+    submittedUsers.every(submittedUser => 
+      goodUsers.some(goodUser => submittedUser.id === goodUser.id))

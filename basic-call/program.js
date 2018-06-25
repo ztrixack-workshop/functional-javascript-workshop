@@ -1,5 +1,6 @@
-module.exports = function duckCount() {
-  return Array.prototype.slice.call(arguments).filter((obj) => {
-    return Object.prototype.hasOwnProperty.call(obj, 'quack')
-  }).length
-}
+const slice = Array.prototype.slice
+const property = Object.prototype.hasOwnProperty
+
+module.exports = () => slice.call(arguments)
+  .filter((obj) => property.call(obj, 'quack'))
+  .length

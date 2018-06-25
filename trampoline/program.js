@@ -1,19 +1,16 @@
-function repeat(operation, num) {
-  return function() {
+const repeat = (operation, num) => 
+  () => {
     if (num <= 0) return
     operation()
     return repeat(operation, --num)
   }
-}
 
-function trampoline(fn) {
+
+const trampoline = (fn) => {
   while(fn && typeof fn === 'function') {
     fn = fn()
   }
 }
 
-module.exports = function(operation, num) {
-  trampoline(function() {
-    return repeat(operation, num)
-  })
-}
+module.exports = (operation, num) => 
+  trampoline(() => repeat(operation, num))

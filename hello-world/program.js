@@ -1,3 +1,1 @@
-module.exports = function(input) {
-  return input.toUpperCase()      
-}                                 
+module.exports = (input) => input.toUpperCase()

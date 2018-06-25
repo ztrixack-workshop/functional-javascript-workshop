@@ -1,3 +1,1 @@
-module.exports = function logger(namespace) {
-  return console.log.bind(console, namespace)
-}
+module.exports = (namespace) => console.log.bind(console, namespace)

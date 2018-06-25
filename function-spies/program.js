@@ -1,8 +1,8 @@
-module.exports = function Spy(target, method) {
+module.exports = (target, method) => {
   let originalFunction = target[method]
   let result = { count: 0 }
 
-  target[method] = function() {
+  target[method] = () => {
     result.count++
     return originalFunction.apply(this, arguments)
   }

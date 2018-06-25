@@ -1,6 +1,8 @@
-module.exports = function reduce(arr, fn, initial) {
-  return function reduceOne(index, value) {
+module.exports = (arr, fn, initial) => {
+  const reduceOne = (index, value) => {
     if (index === arr.length) return value
     return reduceOne(index + 1, fn(value, arr[index], index, arr))
-  }(0, initial)
+  }
+
+  return reduceOne(0, initial)
 }
